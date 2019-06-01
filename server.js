@@ -24,6 +24,11 @@ servidor.post('/comidas', bodyParser.json(), (request,
 
 })
 
+servidor.delete('/comidas/:id', (request,response)=>{
+  controller.remove(request.params.id)
+  response.sendStatus(204)
+})
+
 
 servidor.listen(3000)
 console.log("servidor wonderful rodando na porta 3000") 
